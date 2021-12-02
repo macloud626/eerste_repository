@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    //declaratie var------------------------
+        let fout = false
+        let voornaam;
+        let achternaam;
+
+
+ //functiescript------------------------
+            function control(input) {
+                if (input == null) {
+                    document.write("uw  heeft geannuleert");
+                    fout = true;
+                }
+                else if (input == 0) {
+                    document.write(`<p>"niets ingevuld"</p>`);
+                    fout = true;
+
+                }
+                else if (input.length <= 2) {
+                document.write("your input is invalid");
+                fout = true;
+            }
+            else {
+                return input.charAt(0).toUpperCase() + input.substring(1);
+            }
+           
+            }
+//-------------------------------------------------
+//mainscript-------------------------------
+
+            voornaam = prompt("Geef je voornaam hier");
+        voornaam = control(voornaam);
+        
+        if (fout == false) {
+                achternaam = prompt("geef achternaam");
+                achternaam = control(achternaam);
+
+                if (fout == false) {
+                    document.write(`Hey ${voornaam} ${achternaam}`);
+                }
+            }
+
+        
+       
+    
+    </script>
+    
+</body>
+</html>
